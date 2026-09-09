@@ -16,7 +16,7 @@ public class TarefaService {
 
     }
 
-    // buscar por índice
+
     public Tarefa buscarPorIndice(int indice) {
         if (indice < 0 || indice >= listaTarefa.size()) {
             return null;
@@ -24,13 +24,13 @@ public class TarefaService {
         return listaTarefa.get(indice);
     }
 
-    // adicionar
+
     public Tarefa adicionar(Tarefa usuario) {
         listaTarefa.add(usuario);
         return usuario;
     }
 
-    // atualizar
+
     public Tarefa atualizar(int indice, Tarefa tarefa) {
         if (indice < 0 || indice >= listaTarefa.size()) {
             return null;
@@ -39,7 +39,7 @@ public class TarefaService {
         return tarefa;
     }
 
-    // deletar
+
     public boolean deletar(int indice) {
         if (indice < 0 || indice >= listaTarefa.size()) {
             return false;

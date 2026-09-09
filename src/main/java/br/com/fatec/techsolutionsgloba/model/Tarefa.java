@@ -5,6 +5,7 @@ public class Tarefa {
     private String descricao;
     private int prioridade;
 
+    public Tarefa(){}
     public Tarefa(String titulo, String descricao, int prioridade) {
         this.titulo = titulo;
         this.descricao = descricao;

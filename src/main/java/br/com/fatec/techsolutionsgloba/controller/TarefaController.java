@@ -19,13 +19,12 @@ public class TarefaController {
         this.tarefaService = tarefaService;
     }
 
-    // GET - listar todas as tarefas
+
     @GetMapping
     public ResponseEntity<List<Tarefa>> listar() {
         return ResponseEntity.ok(tarefaService.listar());
     }
 
-    // GET - buscar tarefa por índice
     @GetMapping("/{indice}")
     public ResponseEntity<Tarefa> buscarPorIndice(@PathVariable int indice) {
         Tarefa tarefa = tarefaService.buscarPorIndice(indice);
@@ -37,14 +36,14 @@ public class TarefaController {
 
     // POST - adicionar tarefa
     @PostMapping
-    public ResponseEntity<Tarefa> adicionar(@RequestBody Tarefa tarefa) {
+    public ResponseEntity<Tarefa> adicionarTafera(@RequestBody Tarefa tarefa) {
         Tarefa novaTarefa = tarefaService.adicionar(tarefa);
         return ResponseEntity.status(201).body(novaTarefa);
     }
 
     // PUT - atualizar tatefa
     @PutMapping("/{indice}")
-    public ResponseEntity<Tarefa> atualizar(@PathVariable int indice, @RequestBody Tarefa tarefa) {
+    public ResponseEntity<Tarefa> atualizarTarefa(@PathVariable int indice, @RequestBody Tarefa tarefa) {
         Tarefa tarefaAtualizada = tarefaService.atualizar(indice, tarefa);
         if (tarefaAtualizada == null) {
             return ResponseEntity.notFound().build();
@@ -52,9 +51,9 @@ public class TarefaController {
         return ResponseEntity.ok(tarefaAtualizada);
     }
 
-    // DELETE - remover tarefa
+
     @DeleteMapping("/{indice}")
-    public ResponseEntity<Void> deletar(@PathVariable int indice) {
+    public ResponseEntity<Void> deletarTarefa(@PathVariable int indice) {
         boolean removido = tarefaService.deletar(indice);
         if (!removido) {
             return ResponseEntity.notFound().build();
