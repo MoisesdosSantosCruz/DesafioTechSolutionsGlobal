@@ -34,14 +34,14 @@ public class TarefaController {
         return ResponseEntity.ok(tarefa);
     }
 
-    // POST - adicionar tarefa
+
     @PostMapping
     public ResponseEntity<Tarefa> adicionarTafera(@RequestBody Tarefa tarefa) {
         Tarefa novaTarefa = tarefaService.adicionar(tarefa);
         return ResponseEntity.status(201).body(novaTarefa);
     }
 
-    // PUT - atualizar tatefa
+
     @PutMapping("/{indice}")
     public ResponseEntity<Tarefa> atualizarTarefa(@PathVariable int indice, @RequestBody Tarefa tarefa) {
         Tarefa tarefaAtualizada = tarefaService.atualizar(indice, tarefa);
