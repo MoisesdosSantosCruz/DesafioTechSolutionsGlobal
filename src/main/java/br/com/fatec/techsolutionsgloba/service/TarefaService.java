@@ -10,7 +10,6 @@ import java.util.List;
 public class TarefaService {
     private final ArrayList<Tarefa> listaTarefa = new ArrayList<>();
 
-    //Listar tudo
     public List<Tarefa> listar() {
         return listaTarefa;
 
