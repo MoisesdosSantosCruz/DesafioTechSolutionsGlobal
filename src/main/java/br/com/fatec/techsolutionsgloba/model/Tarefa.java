@@ -1,6 +1,17 @@
 package br.com.fatec.techsolutionsgloba.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Tarefa {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer Id;
     private String titulo;
     private String descricao;
     private int prioridade;
@@ -11,6 +22,8 @@ public class Tarefa {
         this.descricao = descricao;
         this.prioridade = prioridade;
     }
+
+    public Integer getId() {return Id;}
 
     public String getTitulo() {
         return titulo;
